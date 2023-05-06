@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+<div><h2>Messages</h2>
+<form method="post" action="/add_message">
+    <input type="text" name="note">
+    <input type="text" name="important">
+    <button type="submit">Add post</button>
+</form>
+</div>
+
+<div>
+
+<form method="post" action="/clear">
+    <button type="submit">Clear</button>
+</form>
+</div>
+
+
+
+
+<h3>Notes feed</h3>
+{% for raw in notes %}
+<div>{{ raw.note }}
+   <span style = "font-weight : bold">{{ raw.important }}</span>
+</div>
+{% endfor %}
+
+</body>
+</html>
